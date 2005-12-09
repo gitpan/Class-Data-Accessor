@@ -7,13 +7,13 @@ SYNOPSIS
       use base qw(Class::Data::Accessor);
 
       # Set up DataFile as inheritable class data.
-      Stuff->mk_classdata('DataFile');
+      Stuff->mk_classaccessor('DataFile');
 
       # Declare the location of the data file for this class.
       Stuff->DataFile('/etc/stuff/data');
 
       # Or, all in one shot:
-      Stuff->mk_classdata(DataFile => '/etc/stuff/data');
+      Stuff->mk_classaccessor(DataFile => '/etc/stuff/data');
 
       Stuff->DataFile; # returns /etc/stuff/data
 

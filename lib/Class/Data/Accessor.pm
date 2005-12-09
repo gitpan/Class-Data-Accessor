@@ -1,7 +1,7 @@
 package Class::Data::Accessor;
 use strict qw(vars subs);
 use vars qw($VERSION);
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 sub mk_classaccessor {
     my ($declaredclass, $attribute, $data) = @_;
@@ -26,6 +26,7 @@ sub mk_classaccessor {
         return $data;
     };
 
+    no warnings qw/redefine/;
     my $alias = "_${attribute}_accessor";
     *{$declaredclass.'::'.$attribute} = $accessor;
     *{$declaredclass.'::'.$alias}     = $accessor;
@@ -43,13 +44,13 @@ Class::Data::Accessor - Inheritable, overridable class and instance data accesso
   use base qw(Class::Data::Accessor);
 
   # Set up DataFile as inheritable class data.
-  Stuff->mk_classdata('DataFile');
+  Stuff->mk_classaccessor('DataFile');
 
   # Declare the location of the data file for this class.
   Stuff->DataFile('/etc/stuff/data');
 
   # Or, all in one shot:
-  Stuff->mk_classdata(DataFile => '/etc/stuff/data');
+  Stuff->mk_classaccessor(DataFile => '/etc/stuff/data');
 
 
   Stuff->DataFile; # returns /etc/stuff/data
