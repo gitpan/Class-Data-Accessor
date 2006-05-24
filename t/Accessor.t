@@ -1,5 +1,5 @@
 use strict;
-use Test::More tests => 17;
+use Test::More tests => 19;
 
 package Ray;
 use base qw(Class::Data::Accessor);
@@ -49,3 +49,28 @@ is $obj->DataFile("/tmp/morestuff"), "/tmp/morestuff",
   "And they can set their own copy";
 
 is +Gun->DataFile, "/tmp/stuff", "But it doesn't touch the value on the class";
+
+
+{
+    my $warned = 0;
+
+    local $SIG{__WARN__} = sub {
+        if  (shift =~ /DESTROY/i) {
+            $warned++;
+        };
+    };
+
+    Ray->mk_classaccessor('DESTROY');
+
+    ok($warned, 'Warn when creating DESTROY');
+
+    # restore non-accessorized DESTROY
+    no warnings;
+    *Ray::DESTROY = sub {};
+};
+
+eval {
+    $obj->mk_classaccessor('foo');
+};
+like($@, qr{not an object method}, 'Die when used as an object method');
+

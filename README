@@ -91,7 +91,10 @@ DESCRIPTION
 
     If you don't want this behaviour use Class::Data::Inheritable instead.
 
-Methods
+    "mk_classaccessor" will die if used as an object method instead of as a
+    class method.
+
+METHODS
   mk_classaccessor
       Class->mk_classaccessor($data_accessor_name);
       Class->mk_classaccessor($data_accessor_name => $value);
@@ -113,6 +116,16 @@ Methods
 
           $self->_Suitcase_accessor(@_);
       }
+
+    Overriding accessors does not work in the same class as you declare the
+    accessor in. It only works in subclasses due to the fact that
+    subroutines are loaded at compile time and accessors are loaded at
+    runtime, thus overriding any subroutines with the same name in the same
+    class.
+
+  mk_classaccessors(@accessornames)
+    Takes a list of names and generates an accessor for each name in the
+    list using "mk_classaccessor".
 
 AUTHORS
     Based on the creative stylings of Damian Conway, Michael G Schwern, Tony
