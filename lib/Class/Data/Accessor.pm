@@ -1,8 +1,9 @@
 package Class::Data::Accessor;
-use strict qw(vars subs);
+use strict;
+use warnings;
 use Carp;
 use vars qw($VERSION);
-$VERSION = '0.03';
+$VERSION = '0.04000';
 
 sub mk_classaccessor {
     my ($declaredclass, $attribute, $data) = @_;
@@ -31,6 +32,7 @@ sub mk_classaccessor {
     };
 
     no warnings qw/redefine/;
+    no strict qw/refs/;
     my $alias = "_${attribute}_accessor";
     *{$declaredclass.'::'.$attribute} = $accessor;
     *{$declaredclass.'::'.$alias}     = $accessor;
