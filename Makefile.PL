@@ -1,10 +1,10 @@
-# $Id: Makefile.PL 3256 2007-05-06 03:54:57Z claco $
+# $Id: Makefile.PL 3320 2007-05-17 23:04:35Z claco $
 use strict;
 use warnings;
 use inc::Module::Install 0.65;
 
 name 'Class-Data-Accessor';
-license 'perl';
+license 'artistic';
 perl_version '5.006001';
 all_from 'lib/Class/Data/Accessor.pm';
 
