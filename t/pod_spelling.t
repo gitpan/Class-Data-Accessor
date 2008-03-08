@@ -1,5 +1,5 @@
 #!perl -w
-# $Id: pod_spelling.t 3256 2007-05-06 03:54:57Z claco $
+# $Id: /local/Class-Data-Accessor/t/pod_spelling.t 1372 2008-03-08T01:16:01.089092Z claco  $
 use strict;
 use warnings;
 
@@ -20,6 +20,7 @@ add_stopwords(<DATA>);
 all_pod_files_spelling_ok();
 
 __DATA__
+runtime
 Bowden
 Raygun
 isa

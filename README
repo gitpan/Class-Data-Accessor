@@ -15,6 +15,7 @@ SYNOPSIS
       # Or, all in one shot:
       Stuff->mk_classaccessor(DataFile => '/etc/stuff/data');
 
+
       Stuff->DataFile; # returns /etc/stuff/data
 
       my $stuff = Stuff->new; # your new, not ours

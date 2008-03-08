@@ -1,5 +1,8 @@
 Revision history for Class::Data::Accessor.
 
+0.04002 Fri Mar 7 20:13:26 2008
+    - Quick CPANTS fix for META/author
+
 0.04001 Thur May 17 18:21:26 2007
     - Corrected Makefile.PL license to match core module LICENSE
         (perl -> artistic)

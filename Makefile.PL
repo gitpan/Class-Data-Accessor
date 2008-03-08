@@ -1,4 +1,4 @@
-# $Id: Makefile.PL 3320 2007-05-17 23:04:35Z claco $
+# $Id: /local/Class-Data-Accessor/Makefile.PL 1370 2007-05-17T23:04:35.194655Z claco  $
 use strict;
 use warnings;
 use inc::Module::Install 0.65;

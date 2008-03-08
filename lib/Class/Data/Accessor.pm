@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Carp;
 use vars qw($VERSION);
-$VERSION = '0.04001';
+$VERSION = '0.04002';
 
 sub mk_classaccessor {
     my ($declaredclass, $attribute, $data) = @_;

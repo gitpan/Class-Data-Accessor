@@ -1,5 +1,5 @@
 #!perl -wT
-# $Id: strict.t 3256 2007-05-06 03:54:57Z claco $
+# $Id: /local/Class-Data-Accessor/t/strict.t 1369 2007-05-06T03:54:57.072053Z claco  $
 use strict;
 use warnings;
 
