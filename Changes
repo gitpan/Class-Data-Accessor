@@ -1,5 +1,10 @@
 Revision history for Class::Data::Accessor.
 
+0.04003 Thur Aug 07 19:27:33 2008
+    - Changed license to Perl now that Inheritable has also changed
+    - Class::Data::Accessor is not deprecated in favor of
+		Class::Accessor::Grouped or Moose
+
 0.04002 Fri Mar 7 20:13:26 2008
     - Quick CPANTS fix for META/author
 

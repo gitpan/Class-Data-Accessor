@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Carp;
 use vars qw($VERSION);
-$VERSION = '0.04002';
+$VERSION = '0.04003';
 
 sub mk_classaccessor {
     my ($declaredclass, $attribute, $data) = @_;
@@ -78,6 +78,10 @@ Class::Data::Accessor - Inheritable, overridable class and instance data accesso
   Stuff->DataFile; # still returns /etc/stuff/data
 
 =head1 DESCRIPTION
+
+B<This module is now deprecated!>
+
+Please consider using L<Class::Accessor::Grouped> or L<Moose>
 
 Class::Data::Accessor is the marriage of L<Class::Accessor> and
 L<Class::Data::Inheritable> into a single module. It is used for creating
@@ -202,9 +206,10 @@ claco@cpan.org or irc.perl.org, nick claco
 
 =head1 LICENSE
 
-This module is free software. It may be used, redistributed and/or
-modified under the terms of the Perl Artistic License (see
-http://www.perl.com/perl/misc/Artistic.html)
+This module is free software. It may be used, redistributed and/or modified
+under the same terms as Perl itself. (see
+http://dev.perl.org/licenses/artistic.html and
+http://www.opensource.org/licenses/gpl-license.php)
 
 =head1 SEE ALSO
 

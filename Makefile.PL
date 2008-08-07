@@ -1,10 +1,10 @@
-# $Id: /local/Class-Data-Accessor/Makefile.PL 1370 2007-05-17T23:04:35.194655Z claco  $
+# $Id$
 use strict;
 use warnings;
 use inc::Module::Install 0.65;
 
 name 'Class-Data-Accessor';
-license 'artistic';
+license 'perl';
 perl_version '5.006001';
 all_from 'lib/Class/Data/Accessor.pm';
 
